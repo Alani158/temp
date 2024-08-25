@@ -1,0 +1,31 @@
+const { readFile, writeFileSync } = require("fs");
+
+function test() {
+  readFile("./content/text.txt", "utf-8", (err, result) => {
+    if (err) {
+      console.log("error occured ");
+      return;
+    }
+    const first = result;
+    readFile("./content/second.txt", "utf-8", (err, result) => {
+      if (err) {
+        console.log("error occured ");
+        return;
+      }
+      const second = result;
+      writeFileSync(
+        "./content/subfolder/result-sync.txt",
+        `the values are ${first} and ${second} `,
+        (err, result) => {
+          if (err) {
+            console.log("error occured ");
+            return;
+          }
+          console.log(`succesful ${result}`);
+        }
+      );
+    });
+  });
+}
+
+module.exports = { test };

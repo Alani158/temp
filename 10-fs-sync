@@ -1,0 +1,11 @@
+// const { readFileSync, writeFileSync } = require("fs");
+
+// const first = readFileSync("./content/text.txt", "utf-8");
+
+// const Second = readFileSync("./content/second.txt", "utf-8");
+
+// writeFileSync(
+//   "./content/subfolder/result-sync.txt",
+//   `hello overall i think i am better ${first} ${Second} `
+// );
+// console.log(first, Second);
